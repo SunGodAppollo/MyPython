@@ -1,5 +1,5 @@
 # _*_ coding: utf-8 _*_
-class  Down:
+class  t1:
     def show(self):
         print('hello')
 

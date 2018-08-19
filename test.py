@@ -5,20 +5,20 @@ import u
 
 
 
-c=u.n()
+url="https://www.banggood.com/search/957372.html?sbc=1"
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
 #获得系统编码格式
 type = sys.getfilesystemencoding()
 
-rqs=urllib2.urlopen('http://www.baidu.com')
+rqs=urllib2.urlopen(url)
 
 
 html=rqs.read().decode('utf-8').encode(type)
 
 
-print type
-print rqs.code
-print rqs.info()
+#print type
+#print rqs.code
+#print rqs.info()
 print html
