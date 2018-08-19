@@ -25,6 +25,10 @@ class OnePage():
     #通过页面获取网页的跳转连接
     def getNewUrlByHtml(self,html):
         pass
+    #获得真实的连接地址
+    def getResUrl(self,number):
+        htnl=self.getHtmlByUrl(number)
+        return self.getNewUrlByHtml(html)
     #通过html获得bin对象
     def getBinByHtml(self,html):
         pass
