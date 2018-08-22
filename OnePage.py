@@ -2,6 +2,7 @@
 import urllib2
 import sys
 import u
+import re
 
 from  Save import  SaveFile
 from  Save import  SaveExcel
@@ -24,7 +25,9 @@ class OnePage():
         return html
     #通过页面获取网页的跳转连接
     def getNewUrlByHtml(self,html):
-        pass
+        result=re.match('<li(.*?)</li>',html)
+        print(result.group())
+        return 1
     #获得真实的连接地址
     def getResUrl(self,number):
         htnl=self.getHtmlByUrl(number)
@@ -38,4 +41,9 @@ class OnePage():
 if __name__ == '__main__':
         #url="https://www.banggood.com/search/957372.html?sbc=1"
         page=OnePage()
-        print(page.getHtmlByUrl(957372))
+        html=page.getHtmlByUrl(957372)
+        #f = open('test.txt', 'w')
+        #f.write(html)
+        #f.close()
+        url=page.getNewUrlByHtml(html)
+        print(url)
